@@ -4,38 +4,28 @@ title: Customizing Odyssey Theme
 description: Learn how to customize Odyssey Theme's theme styles.
 ---
 
-This is one of the core features of Odyssey Theme and we've made it super easy to make the overall look and feel of the site your own with just a few top-level CSS custom properties. These custom properties and demo themes will be found in the `theme.css` file under `src/styles/`.
+This is one of the core features of Odyssey Theme and we've made it super easy to make the overall look and feel of the site your own with just a few top-level CSS custom properties. These custom properties are found in the `theme.css` file under `src/styles/`.
 
-First, If you are not planning on using the theme switcher found on the demo's home page we would recommend you go to the `settings.js` file under `src/config/` and set `enableThemeSwitcher` to false. This will remove the theme switcher components and javascript from your website.
-
-It should look something like this.
-
-```js
-export default {
-  title: `Odyssey Astro Theme | A Marketing Website Theme for Startups and Businesses`,
-  description: `A simple, clean, and modern theme a startup or businesses' marketing website.`,
-  ...
-  enableThemeSwitcher: false,
-};
-```
-
-Second, if you are only going to have one theme on your site (most common) then you can delete all of the `[data-theme]` rules from the file and only keep the `:root` theme that looks something like this.
+This site is set up with a single theme defined entirely in `:root` — there's no runtime theme switcher and no `[data-theme]` blocks, just one set of CSS custom properties that apply everywhere. It currently looks like this:
 
 ```css
 :root {
+	color-scheme: dark;
 	/* Theme Colors */
-	--theme-primary: hsl(0, 0%, 0%);
-	--theme-primary-hover: hsl(0, 0%, 20%);
-	--theme-on-primary: #fff;
+	--theme-primary: hsl(258, 80%, 56%);
+	--theme-primary-hover: hsl(258, 80%, 64%);
+	--theme-on-primary: hsl(0, 0%, 100%);
 
-	--theme-bg: #fff;
-	--theme-on-bg: #000;
+	--theme-bg: hsl(222, 12%, 13%);
+	--theme-on-bg: hsl(0, 0%, 100%);
 
-	--theme-surface-1: #f2f2f2;
-	--theme-on-surface-1: #000;
+	--theme-surface-1: hsl(222, 10%, 25%);
+	--theme-on-surface-1: hsl(0, 0%, 100%);
 
-	--theme-surface-2: #cce6d0;
-	--theme-on-surface-2: #000;
+	--theme-surface-2: hsl(258, 45%, 18%);
+	--theme-on-surface-2: #ffffff;
+
+	--form-field-input-color: var(--theme-on-bg);
 
 	/* Theme Shapes */
 	/* Set this to 0 if you want all of the rounded cards, images, etc to be straight edges */
@@ -80,7 +70,7 @@ Here is a quick breakdown of the color properties:
 
 ## Shapes
 
-You'll notice a lot of rounded corners on the Odyssey Theme but if you look closely when the "Dark" theme is enabled the corners are all hard edges. This is because of the global `--theme-shape-radius` property. It will determine the shape of things like cards and images.
+You'll notice a lot of rounded corners on the Odyssey Theme. This is because of the global `--theme-shape-radius` property. It will determine the shape of things like cards and images — set it to `0` for hard edges instead.
 
 ## Transition
 
