@@ -2,7 +2,6 @@
 import { parse, isBefore } from 'date-fns';
 import {
 	Container,
-	TextCardSection,
 	BlogPostsList,
 } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
@@ -31,10 +30,10 @@ const seo = {
 
 <Layout {seo}>
 	<Container>
-		<TextCardSection>
+		<header class="blog-header">
 			<h1>Blog</h1>
 			<p>Occasional writing on teaching, code, and whatever I'm building.</p>
-		</TextCardSection>
+		</header>
 		<section class="blog-posts-list__section">
 			<h2>Recent Posts</h2>
 			<BlogPostsList posts={posts} />
@@ -43,7 +42,10 @@ const seo = {
 </Layout>
 
 <style>
+	.blog-header {
+		margin: var(--section-margin) auto 0 auto;
+	}
 	.blog-posts-list__section {
-		margin: var(--section-margin) auto;
+		margin: 2rem auto var(--section-margin) auto;
 	}
 </style>

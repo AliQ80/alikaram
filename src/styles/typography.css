@@ -93,11 +93,11 @@ h1 {
 }
 
 h2 {
-	font-size: var(--font-size-xl);
+	font-size: calc(var(--font-size-xl) * 0.75);
 }
 
 h3 {
-	font-size: var(--font-size-lg);
+	font-size: calc(var(--font-size-lg) * 0.75);
 }
 
 h1,
