@@ -6,7 +6,6 @@ import {
 	BlogPostsList,
 } from '@components/odyssey-theme';
 import Layout from '../../layouts/Page.astro';
-import NewsletterForm from '../../components/forms/NewsletterForm.astro';
 
 const posts = Object.values(import.meta.glob('./posts/*.mdx', { eager: true }))
 	.map(({ frontmatter, url }) => ({
@@ -25,20 +24,16 @@ const posts = Object.values(import.meta.glob('./posts/*.mdx', { eager: true }))
 	});
 
 const seo = {
-	title: 'Blog | Astro Odyssey Theme',
-	description: 'Astro Odyssey Theme Blog Page',
+	title: 'Blog | Ali Karam',
+	description: 'Posts by Ali Karam.',
 };
 ---
 
 <Layout {seo}>
 	<Container>
 		<TextCardSection>
-			<h1>Odyssey Blog</h1>
-			<p>
-				View our blog to stay up to date on the latest news about our business.
-				Want to be the first to hear about a new blog post? Join our newsletter!
-			</p>
-			<NewsletterForm />
+			<h1>Blog</h1>
+			<p>Occasional writing on teaching, code, and whatever I'm building.</p>
 		</TextCardSection>
 		<section class="blog-posts-list__section">
 			<h2>Recent Posts</h2>

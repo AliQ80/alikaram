@@ -1,0 +1,57 @@
+---
+import { Container } from '@components/odyssey-theme';
+import Layout from '../layouts/Page.astro';
+import { projects } from '../config/projects';
+
+const seo = {
+	title: 'Projects | Ali Karam',
+	description: 'Projects by Ali Karam.',
+};
+---
+
+<Layout {seo}>
+	<Container>
+		<header class="projects-header">
+			<h1>Projects</h1>
+			<p>A few things I've built and open-sourced.</p>
+		</header>
+		<div class="project-card__grid">
+			{
+				projects.map((project) => (
+					<a class="project-card" href={project.url} target="_blank" rel="noreferrer">
+						<h3>{project.title}</h3>
+						<p>{project.description}</p>
+					</a>
+				))
+			}
+		</div>
+	</Container>
+</Layout>
+
+<style>
+	.projects-header {
+		margin: var(--section-margin) auto 0 auto;
+	}
+	.project-card__grid {
+		margin: 2rem auto var(--section-margin) auto;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--theme-grid-gap);
+	}
+	.project-card {
+		display: block;
+		padding: 1.5rem;
+		background-color: var(--theme-surface-1);
+		color: var(--theme-on-surface-1);
+		border-radius: var(--theme-shape-radius);
+		text-decoration: none;
+	}
+	.project-card h3 {
+		font-family: var(--theme-font-family-sans);
+	}
+	@media (max-width: 768px) {
+		.project-card__grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

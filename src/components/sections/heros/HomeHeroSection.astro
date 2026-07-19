@@ -6,30 +6,24 @@ import { Container, Button } from '@components/odyssey-theme';
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
-				<h1>Welcome to Odyssey</h1>
-				<p>
-					A marketing website theme built with <a
-						href="https://astro.build"
-						target="_blank"
-						rel="noreferrer">Astro</a
-					> and carefully crafted for startups and businesses.
-				</p>
+				<h1>Ali Karam</h1>
+				<p>Educator, software engineer, and robotics coach.</p>
 				<div class="hero-btns__container">
-					<Button href="/theme/get-started" customIcon
-						>Get Started
+					<Button href="/projects" customIcon
+						>View Projects
             <Fragment slot="icon">
               <Icon name="ic:baseline-chevron-right"/>
             </Fragment>
             </Button
 					>
-					<Button href="/theme/style-guide" unelevated>Style Guide</Button>
+					<Button href="/blog" unelevated>Read the Blog</Button>
 				</div>
 		</div>
 		<div class="hero-section__image">
 				<picture>
 					<img
-						src="/assets/images/home/dark-hero.jpg"
-						alt="Astro Odyssey"
+						src="/assets/images/home/ali-karam-hero.jpg"
+						alt="Ali Karam"
 					/>
 				</picture>
 		</div>
@@ -65,6 +59,7 @@ import { Container, Button } from '@components/odyssey-theme';
 		height: 100%;
 		max-height: 80vh;
 		object-fit: cover;
+		object-position: top;
 		border-radius: var(--theme-shape-radius);
 	}
 	@media (max-width: 768px) {
