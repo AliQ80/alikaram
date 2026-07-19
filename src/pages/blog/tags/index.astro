@@ -1,0 +1,36 @@
+---
+import Layout from '../../../layouts/Page.astro';
+import { Container } from '@components/odyssey-theme';
+import { generateTagData } from '../../../utils/helpers.js';
+
+const allPosts = Object.values(import.meta.glob('../posts/*.mdx', { eager: true }));
+const allCategoriesUnique = new Set();
+allPosts.forEach(post => {
+  post.frontmatter.tags?.forEach(tag => allCategoriesUnique.add(tag));
+});
+const allCategoriesData = generateTagData(allCategoriesUnique);
+
+const seo = {
+  title: `Tags | Astro Odyssey`,
+};
+---
+
+<Layout seo={seo}>
+  <Container narrow>
+    <section class="tag-page__section">
+      <h1>Browse Posts by Tag</h1>
+      <ul>
+        {allCategoriesData.map(tag => (
+          <li><a href={`/blog/tags/${tag.slug}`}>{tag.title}</a></li>
+        ))}
+      </ul>
+    </section>
+  </Container>
+</Layout>
+
+<style>
+.tag-page__section {
+  min-height: 60vh;
+  margin: var(--section-margin);
+}
+</style>
