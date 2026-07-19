@@ -1,15 +1,25 @@
 ---
 ---
 
-<p class="odyssey-logo">Ali Karam</p>
+<span class="odyssey-logo">
+	<img class="odyssey-logo__mark" src="/assets/images/brand/logo.svg" alt="" width="32" height="20" />
+	Ali Karam
+</span>
 
 <style>
 	.odyssey-logo {
 		width: fit-content;
 		margin: 0;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 		font-family: var(--theme-font-family-serif);
     font-size: var(--font-size-md);
 		color: inherit;
+	}
+	.odyssey-logo__mark {
+		width: 3rem;
+		height: auto;
 	}
 	.odyssey-logo:hover {
 		text-decoration: underline;
