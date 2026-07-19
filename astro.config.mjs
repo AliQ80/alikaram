@@ -5,6 +5,6 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://odyssey-theme.sapling.supply/', // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
+  site: 'https://alikaram.com/', // Your public domain, e.g.: https://my-site.dev/. Used to generate sitemaps and canonical URLs.
   integrations: [sitemap(), mdx(), icon()], // Add renderers to the config
 });
