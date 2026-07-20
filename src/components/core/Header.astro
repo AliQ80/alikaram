@@ -59,7 +59,10 @@ const { navData, rightMenu } = Astro.props;
       {navData && <nav>
         <ul>
           {navData.map(navItem => (
-            (<li><a href={navItem.slug} >{navItem.title}</a></li>)
+            (<li><a href={navItem.slug}>
+              {navItem.icon && <Icon name={navItem.icon} width="1em" height="1em" />}
+              {navItem.title}
+            </a></li>)
           ))}
         </ul>
       </nav>}
@@ -119,6 +122,9 @@ const { navData, rightMenu } = Astro.props;
     display: flex;
   }
   nav ul li a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     text-decoration: none;
     margin-right: 1rem;
     color: inherit;
