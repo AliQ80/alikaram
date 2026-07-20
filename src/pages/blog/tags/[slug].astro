@@ -2,32 +2,24 @@
 import Layout from '../../../layouts/Page.astro'
 import { Container } from '@components/odyssey-theme';
 import {generateTagData} from '../../../utils/helpers.js'
-
+import { getBlogPosts } from '../../../utils/blog.js';
 
 export async function getStaticPaths() {
-  const allPosts = Object.values(import.meta.glob('../posts/*.mdx', { eager: true }));
-  const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
+  const posts = getBlogPosts();
   const allCategoriesUnique = new Set();
-  
-  sortedPosts.forEach(post => {
-    post.frontmatter.tags && post.frontmatter.tags.map(tag => {
-      allCategoriesUnique.add(tag);
-    })
-  })
-  
-  const allCategoriesData = generateTagData(allCategoriesUnique);
-   // map through the categories array
-  return allCategoriesData.map((tag) => {
-    // filter the posts that match the given category
-    const posts = sortedPosts.filter((post) => post.frontmatter.tags.includes(tag.title))
-      return {
-      params: {slug: tag.slug}, 
-      props: {
-        tag: tag.title, 
-        posts: posts
-      }
-    };
+
+  posts.forEach(post => {
+    post.tags?.forEach(tag => allCategoriesUnique.add(tag));
   });
+
+  const allCategoriesData = generateTagData(allCategoriesUnique);
+  return allCategoriesData.map((tag) => ({
+    params: { slug: tag.slug },
+    props: {
+      tag: tag.title,
+      posts: posts.filter(post => post.tags?.includes(tag.title)),
+    },
+  }));
 }
 
 const {tag, posts} = Astro.props;
@@ -43,7 +35,7 @@ const seo ={
       <h1>Posts Tagged with "{tag}"</h1>
       <ul>
         {posts.map(post => (
-          <li><a href={post.url}>{post.frontmatter.title}</a></li>
+          <li><a href={post.url}>{post.title}</a></li>
         ))}
       </ul>
     </section>

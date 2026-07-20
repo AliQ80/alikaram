@@ -2,11 +2,11 @@
 import Layout from '../../../layouts/Page.astro';
 import { Container } from '@components/odyssey-theme';
 import { generateTagData } from '../../../utils/helpers.js';
+import { getBlogPosts } from '../../../utils/blog.js';
 
-const allPosts = Object.values(import.meta.glob('../posts/*.mdx', { eager: true }));
 const allCategoriesUnique = new Set();
-allPosts.forEach(post => {
-  post.frontmatter.tags?.forEach(tag => allCategoriesUnique.add(tag));
+getBlogPosts().forEach(post => {
+  post.tags?.forEach(tag => allCategoriesUnique.add(tag));
 });
 const allCategoriesData = generateTagData(allCategoriesUnique);
 
