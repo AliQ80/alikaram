@@ -37,6 +37,10 @@ import { Container } from '@components/odyssey-theme';
 	}
 	.hero-section__image {
 		display: flex;
+		align-self: stretch;
+	}
+	.hero-section__image :global(picture) {
+		width: 100%;
 	}
 	.hero-section__image :global(img) {
 		width: 100%;
@@ -49,6 +53,11 @@ import { Container } from '@components/odyssey-theme';
 		.hero-section__section {
 			margin: 2rem auto 0 auto;
 			grid-template-columns: 1fr;
+		}
+	}
+	@media (min-width: 769px) and (max-aspect-ratio: 4/5) {
+		.hero-section__section {
+			min-height: auto;
 		}
 	}
 </style>

@@ -41,9 +41,12 @@ import { Container, Button } from '@components/odyssey-theme';
 	.hero-section__text {
 		justify-self: center;
 		max-width: 25rem;
+		text-align: center;
 	}
 	.hero-btns__container {
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		align-items: center;
 		gap: 1rem;
 	}
@@ -52,6 +55,10 @@ import { Container, Button } from '@components/odyssey-theme';
 	}
 	.hero-section__image {
 		display: flex;
+		align-self: stretch;
+	}
+	.hero-section__image picture {
+		width: 100%;
 	}
 	.hero-section__image img {
 		width: 100%;
@@ -69,6 +76,14 @@ import { Container, Button } from '@components/odyssey-theme';
 			flex-direction: column;
 			align-items: center;
 			gap: 0.75rem;
+		}
+		.hero-btns__container :global(.btn) {
+			width: 80%;
+		}
+	}
+	@media (min-width: 769px) and (max-aspect-ratio: 4/5) {
+		.hero-section__section {
+			min-height: auto;
 		}
 		.hero-btns__container :global(.btn) {
 			width: 80%;
