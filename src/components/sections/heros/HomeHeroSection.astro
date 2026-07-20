@@ -6,24 +6,25 @@ import { Container, Button } from '@components/odyssey-theme';
 <Container>
 	<section class="hero-section__section">
 		<div class="hero-section__text">
-				<h1>Ali Karam</h1>
-				<p>Educator, software engineer, and robotics coach.</p>
-				<div class="hero-btns__container">
-					<Button href="/projects" outlined customIcon iconStart
-						>View Projects <Fragment slot="icon"><Icon name="mdi:briefcase-outline" /></Fragment></Button
-					>
-					<Button href="/blog" outlined customIcon iconStart
-						>Read the Blog <Fragment slot="icon"><Icon name="mdi:notebook-outline" /></Fragment></Button
-					>
-				</div>
+			<h1>Ali Karam</h1>
+			<p>Educator, software engineer, and robotics coach.</p>
+			<div class="hero-btns__container">
+				<Button href="/projects" outlined customIcon iconStart
+					>View Projects <Fragment slot="icon"
+						><Icon name="mdi:briefcase-outline" /></Fragment
+					></Button
+				>
+				<Button href="/blog" outlined customIcon iconStart
+					>Read the Blog <Fragment slot="icon"
+						><Icon name="mdi:notebook-outline" /></Fragment
+					></Button
+				>
+			</div>
 		</div>
 		<div class="hero-section__image">
-				<picture>
-					<img
-						src="/assets/images/home/ali-karam-hero.jpg"
-						alt="Ali Karam"
-					/>
-				</picture>
+			<picture>
+				<img src="/assets/images/home/ali-karam-hero.jpg" alt="Ali Karam" />
+			</picture>
 		</div>
 	</section>
 </Container>
@@ -68,6 +69,9 @@ import { Container, Button } from '@components/odyssey-theme';
 			flex-direction: column;
 			align-items: center;
 			gap: 0.75rem;
+		}
+		.hero-btns__container :global(.btn) {
+			width: 80%;
 		}
 	}
 </style>
