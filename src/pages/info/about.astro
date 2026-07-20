@@ -5,7 +5,8 @@ import HeroSection from '../../components/sections/heros/HeroSection.astro';
 
 const seo = {
 	title: 'About | Ali Karam',
-	description: 'Educator, software engineer, and robotics coach based in Kuwait.',
+	description:
+		'Educator, software engineer, and robotics coach based in Kuwait.',
 };
 ---
 
@@ -14,30 +15,44 @@ const seo = {
 		<div slot="text-container">
 			<h1>About Me</h1>
 			<p>
-				I've been coding since 1988, when I started with BASIC at age 12.
-				These days I teach computer science to high schoolers and build web
-				projects on the side.
+				I've been coding since 1988, when I started with BASIC at age 12. These
+				days I teach computer science to high schoolers and build web projects
+				on the side.
 			</p>
 		</div>
-    <picture slot="image-container">
-      <img
-        src="/assets/images/home/about-hero.jpg"
-        alt="Ali Karam"
-        id="home-hero-image"
-      />
-    </picture>
+		<picture slot="image-container">
+			<img
+				src="/assets/images/home/about-hero.jpg"
+				alt="Ali Karam"
+				id="home-hero-image"
+			/>
+		</picture>
 	</HeroSection>
-  <TextSection narrow>
-    <p>
-      I'm a Computer Science teacher at a high school, where I get to introduce
-      the next generation of students to programming and robotics. Outside the
-      classroom, I do web development — this site included.
-    </p>
-    <p>
-      I've been writing code for close to four decades now, starting on BASIC
-      back in 1988. That long a run means I've picked up a lot along the way,
-      but I still enjoy learning new tools and languages as much as I did at 12.
-    </p>
-    <p>I'm based in Kuwait.</p>
-  </TextSection>
+	<TextSection narrow>
+		<p>
+			I'm a Computer Science teacher at a high school, where I get to introduce
+			the next generation of students to programming and robotics. Outside the
+			classroom, I do web development — this site included.
+		</p>
+		<p>
+			As VEX Robotics coach, my teams won all three national championships held
+			in Kuwait, taking home Skills, Championship, and Excellence awards, and I
+			coached the national team all three years we qualified for the World
+			Championship in Dallas, Texas. Several of those students went on to study
+			tech fields in university; some now lead their university's robotics
+			teams, and others have gone into coaching the next generation themselves.
+		</p>
+		<p>
+			I also coached a team that placed second in Kuwait's National AI
+			Competition with a project aimed at elderly care: an alarm clock that uses
+			an Arduino to control servo motors, dispensing the correct medication at
+			the correct time and auto-correcting its schedule if a dose is missed.
+		</p>
+		<p>
+			I've been writing code for close to four decades now, that long a run
+			means I've picked up a lot along the way, but I still enjoy learning new
+			tools and languages as much as I did at 12.
+		</p>
+		<p>I'm based in Kuwait.</p>
+	</TextSection>
 </Layout>
