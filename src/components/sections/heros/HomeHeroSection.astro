@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 import { Container, Button } from '@components/odyssey-theme';
 ---
 
@@ -8,8 +9,12 @@ import { Container, Button } from '@components/odyssey-theme';
 				<h1>Ali Karam</h1>
 				<p>Educator, software engineer, and robotics coach.</p>
 				<div class="hero-btns__container">
-					<Button href="/projects" outlined>View Projects</Button>
-					<Button href="/blog" outlined>Read the Blog</Button>
+					<Button href="/projects" outlined customIcon iconStart
+						>View Projects <Fragment slot="icon"><Icon name="mdi:rocket-launch-outline" /></Fragment></Button
+					>
+					<Button href="/blog" outlined customIcon iconStart
+						>Read the Blog <Fragment slot="icon"><Icon name="mdi:notebook-outline" /></Fragment></Button
+					>
 				</div>
 		</div>
 		<div class="hero-section__image">

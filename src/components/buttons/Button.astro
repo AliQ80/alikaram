@@ -1,5 +1,5 @@
 ---
-const { href, unelevated, outlined, customIcon, onPrimary, newTab } =
+const { href, unelevated, outlined, customIcon, iconStart, onPrimary, newTab } =
   Astro.props;
 
 const Tag = href ? 'a' : 'button';
@@ -13,8 +13,9 @@ const Tag = href ? 'a' : 'button';
   target={`${newTab ? '_blank': ``}`}
   rel={`${newTab ? 'noopener noreferrer' : ``}`}
 >
+  {customIcon && iconStart && <span class="custom-icon__span custom-icon__span--start"><slot name="icon">custom_icon</slot></span>}
   <slot />
-  {customIcon && <span class="custom-icon__span"><slot name="icon">custom_icon</slot></span>}
+  {customIcon && !iconStart && <span class="custom-icon__span"><slot name="icon">custom_icon</slot></span>}
 </Tag>
 
 <style>
@@ -56,6 +57,10 @@ const Tag = href ? 'a' : 'button';
     margin-left: 0.25rem;
     display: flex;
     align-items: center;
+  }
+  .custom-icon__span--start {
+    margin-left: 0;
+    margin-right: 0.6rem;
   }
 
   .custom-icon__span :global(svg) {
